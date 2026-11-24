@@ -27,6 +27,8 @@ def main() -> None:
     rant = RANT
     if not 1 <= len(rant) <= 400:
         raise ValueError(f"entry rant is {len(rant)} characters, must be 1-400")
+    if "printer" not in rant.lower():
+        raise ValueError("entry rant must be about the printer")
     if not rant.strip():
         raise ValueError("entry rant must not be only whitespace")
     if rant != rant.strip():
